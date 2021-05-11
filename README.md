@@ -9,7 +9,7 @@ Esta prueba esta planteado en un escenario con el framework de Ionic en la últi
 ## Login
 
 ```bash
-POST ::  http://138.91.226.69:81/api/auth/login body = {	payroll_number: ‘’ (string)	password: ‘’ (string)}
+POST ::  http://138.91.226.69:81/api/auth/login body = {  payroll_number: ‘151154’ (string)	password: ‘151154’ (string) }
 
 ```
 
@@ -31,6 +31,7 @@ GET :: http://138.91.226.69:81/api/auth/me
 ```bash
 GET :: http://138.91.226.69:81/api/auth/logout
 ```
+
 
 
 ## Validaciones
