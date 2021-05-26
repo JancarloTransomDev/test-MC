@@ -10,10 +10,10 @@
         <span *ngIf="!isLoading">{{getInfoPagination()}}</span>
       </div>
       <div>
-        <ion-button size="small" [disabled]="pagination.page <= 1" (click)="prevPage()">
+        <ion-button size="small" [disabled]="isLoading || pagination.page <= 1" (click)="prevPage()">
           <ion-icon name="chevron-back-outline"></ion-icon>
         </ion-button>
-        <ion-button size="small" [disabled]="pagination.page >= pagination.pages" (click)="nextPage()">
+        <ion-button size="small" [disabled]="isLoading || pagination.page >= pagination.pages" (click)="nextPage()">
           <ion-icon name="chevron-forward-outline"></ion-icon>
         </ion-button>
       </div>
