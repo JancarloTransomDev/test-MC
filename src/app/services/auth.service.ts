@@ -130,11 +130,11 @@ export class AuthService {
   }
 
   public goToLoggedHomePage(): void {
-    this.router.navigate(['/admin']);
+    this.router.navigate(['/admin'], { replaceUrl: true });
   }
 
   public goToLoginPage(): void {
-    this.router.navigate(['/auth/login']);
+    this.router.navigate(['/auth/login'], { replaceUrl: true });
   }
 
   private getUserMe(bearerToken: string): Observable<UserType | null> {
