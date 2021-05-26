@@ -25,7 +25,6 @@ export class UsersComponent implements OnInit {
     this.isLoading = true;
     this.userEndpointService.paginate(page).subscribe(paginate => {
       this.pagination = paginate;
-      console.log(paginate);
       this.isLoading = false;
     });
   }

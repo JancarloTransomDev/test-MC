@@ -105,7 +105,6 @@ export class AuthService {
       'Authorization': `Bearer ${this._accessToken}`
     });
     this.httpClient.get<any>(this.logoutUrl, {headers}).subscribe(value => {
-      console.log(value);
     });
     this.localStorageService.setAccessToken(null);
     this.localStorageService.setRefreshToken(null);
