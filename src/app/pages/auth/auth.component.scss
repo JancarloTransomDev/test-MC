@@ -1,0 +1,9 @@
+:host {
+  background-size: cover;
+  background-image: url("/assets/images/background_tg.png");
+}
+ion-content {
+  --background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  //background-color: rgba(255, 255, 255, 0.7);
+}

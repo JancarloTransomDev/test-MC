@@ -1,0 +1,36 @@
+<ion-content>
+  <ion-header>
+    <ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
+  <ion-progress-bar *ngIf="isLoading" type="indeterminate"></ion-progress-bar>
+  <ion-toolbar>
+    <div class="pagination">
+      <div class="info">
+        <span *ngIf="!isLoading">{{getInfoPagination()}}</span>
+      </div>
+      <div>
+        <ion-button size="small" [disabled]="pagination.page <= 1" (click)="prevPage()">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+        </ion-button>
+        <ion-button size="small" [disabled]="pagination.page >= pagination.pages" (click)="nextPage()">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+        </ion-button>
+      </div>
+    </div>
+  </ion-toolbar>
+  <div *ngIf="!isLoading">
+    <ion-list>
+      <ion-item *ngFor="let item of pagination.data">
+        <ion-avatar slot="start">
+          <img [alt]="item.name" src="./assets/icon/no-avatar.png">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{item.name}}</h2>
+          <h3>{{item.email}}</h3>
+          <p>{{item.role}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

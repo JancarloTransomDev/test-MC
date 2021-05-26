@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-menu side="start" menuId="first" contentId="content1">
+  <ion-content>
+    <ion-grid>
+      <ion-row class="f-menu">
+        <ion-col>
+          <ion-list *ngFor="let pages of navigate">
+            <ion-menu-toggle auto-hide="true">
+              <ion-item [routerLink]="pages.url" routerDirection="forward">
+                <ion-icon [name]="pages.icon" slot="start"></ion-icon>
+                {{pages.title}}
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <div class="logout-container">
+          <ion-button color="secondary" (click)="logout()">Close Session</ion-button>
+        </div>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet id="content1"></ion-router-outlet>
