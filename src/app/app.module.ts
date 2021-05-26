@@ -11,6 +11,7 @@ import {HeadersInterceptor} from './interceptors/headers.interceptor';
 import {AuthService} from './services/auth.service';
 import {AuthGuard} from './guards/auth.guard';
 import {LocalStorageService} from './services/local-storage.service';
+import {NoAuthGuard} from './guards/no-auth.guard';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import {LocalStorageService} from './services/local-storage.service';
   providers: [
     AuthService,
     AuthGuard,
+    NoAuthGuard,
     LocalStorageService,
     {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
     {provide: HTTP_INTERCEPTORS, useClass: HeadersInterceptor, multi: true},

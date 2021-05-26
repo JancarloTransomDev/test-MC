@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import {AuthGuard} from './guards/auth.guard';
+import {NoAuthGuard} from './guards/no-auth.guard';
 
 const routes: Routes = [
   {
@@ -10,7 +11,8 @@ const routes: Routes = [
   },
   {
     path: 'auth',
-    loadChildren: () => import('./pages/auth/auth.module').then( m  => m.AuthModule)
+    loadChildren: () => import('./pages/auth/auth.module').then( m  => m.AuthModule),
+    canActivate: [NoAuthGuard]
   },
   {
     path: 'admin',
